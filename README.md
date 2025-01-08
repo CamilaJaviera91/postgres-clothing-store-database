@@ -10,7 +10,7 @@
 
 ## Schema
 
-![Clothing Store 1](./images/pic1.png)
+![Clothing Store 1](./images/pic2.png)
 
 ## Key Points to Remember
 - **Referential Integrity:** Make sure **customer_id**, **order_id**, **product_id**, and **supplier_id** match valid records in the respective tables to satisfy foreign key constraints.
