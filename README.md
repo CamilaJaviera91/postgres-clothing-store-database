@@ -109,11 +109,43 @@ CREATE TABLE clothing_store.products_suppliers (
 
 ![Clothing Store 1](./images/pic3.png)
 
-## Usage
+## Usage POSTGRES
 
 1. Clone this repository to your local environment.
 2. Run the `Create_Schema.sql` script in your preferred SQL database environment (e.g., PostgreSQL).
 3. Customize or extend the schema as needed for your application.
+
+# Python
+
+## Data Generation Script
+
+- A Python script `generate_customers_data.py` is included to generate sample data for the `customers` table.
+
+- A Python script `generate_orders_data.py` is included to generate sample data for the `orders` table.
+
+- A Python script `generate_orders_details_data.py` is included to generate sample data for the `details_orders` table.
+
+- A Python script `generate_product_data.py` is included to generate sample data for the `products` table.
+
+- A Python script `generate_product_suppliers_data.py` is included to generate sample data for the `product_suppliers` table.
+
+- A Python script `generate_suppliers_data.py` is included to generate sample data for the `suppliers` table.
+
+### Script Overview
+
+These scripts uses the `Faker` library to generate realistic customer data, ensuring unique values for IDs, names, emails, phone numbers, addresses, and registration dates. The generated data is formatted as SQL `INSERT` statements.
+
+## Usage
+
+1. Install the required library: `pip install faker`
+2. Run the scripts: 
+- `python generate_customers_data.py`
+- `python generate_orders_data.py`
+- `python generate_orders_details_data.py`
+- `python generate_product_data.py`
+- `python generate_product_suppliers_data.py`
+- `python generate_suppliers_data.py`
+3. Copy the generated SQL output and execute it in your database environment.
 
 ## Key Points to Remember
 - **Referential Integrity:** Make sure **customer_id**, **order_id**, **product_id**, and **supplier_id** match valid records in the respective tables to satisfy foreign key constraints.
