@@ -109,7 +109,7 @@ CREATE TABLE clothing_store.products_suppliers (
 
 ![Clothing Store 1](./images/pic3.png)
 
-## Usage POSTGRES
+## Usage
 
 1. Clone this repository to your local environment.
 2. Run the `Create_Schema.sql` script in your preferred SQL database environment (e.g., PostgreSQL).
