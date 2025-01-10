@@ -156,3 +156,7 @@ These scripts uses the `Faker` library to generate realistic customer data, ensu
 - [Postgres Documentation](https://www.postgresql.org/docs/)
 - [Faker Documentation](https://faker.readthedocs.io/en/master/)
 - [Random Documentation](https://docs.python.org/3/library/random.html)
+
+## Contributions
+
+Contributions are welcome! Feel free to submit issues or pull requests to enhance the functionality.
