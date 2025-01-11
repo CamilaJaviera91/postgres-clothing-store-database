@@ -1,27 +1,27 @@
-# Clothing Store Database Schema
+# <u>Clothing Store Database Schema</u>
 
 This repository contains the SQL script to create and define the schema for a clothing store database. The schema is designed to handle customers, products, orders, suppliers, and their relationships effectively.
 
-## Schema Overview
+## <u>Schema Overview</u>
 
 The schema includes the following tables:
 
-1. **`customers`**: Stores information about customers, including their name, email, phone number, address, and registration date.
-2. **`products`**: Contains details about products available in the store, including their name, description, price, stock, and category.
-3. **`orders`**: Records customer orders, including the total amount, order date, and status.
-4. **`order_details`**: Represents the items in each order, including quantity, unit price, and subtotal.
-5. **`suppliers`**: Stores supplier details such as name, phone, email, and address.
-6. **`products_suppliers`**: Defines the many-to-many relationship between products and suppliers, including the purchase price and last updated timestamp.
+1. **<u>`customers`</u>**: Stores information about customers, including their name, email, phone number, address, and registration date.
+2. **<u>`products`</u>**: Contains details about products available in the store, including their name, description, price, stock, and category.
+3. **<u>`orders`</u>**: Records customer orders, including the total amount, order date, and status.
+4. **<u>`order_details`</u>**: Represents the items in each order, including quantity, unit price, and subtotal.
+5. **<u>`suppliers`</u>**: Stores supplier details such as name, phone, email, and address.
+6. **<u>`products_suppliers`</u>**: Defines the many-to-many relationship between products and suppliers, including the purchase price and last updated timestamp.
 
-## Connection
+## <u>Connection</u>
 
 1. In this case we are going to use DBeaver, so the first thing that we are gong to do is create a new connection.
 - As is shown in the picture we need:
-    - **Host:** localhost
-    - **Database:** postgres
-    - **Port:** 5432
-    - **Username:** postgres
-    - **Password:** _YOUR PASSWORD_
+    - **<u>Host</u>:** localhost
+    - **<u>Database</u>:** postgres
+    - **<u>Port</u>:** 5432
+    - **<u>Username</u>:** postgres
+    - **<u>Password</u>:** _YOUR PASSWORD_
 <br>
 
 ![Clothing Store 1](./images/pic4.png)
@@ -32,19 +32,19 @@ The schema includes the following tables:
 
 ![Clothing Store 1](./images/pic5.jpg)
 
-## Script Details
+## <u>Script Details</u>
 
-The `Create_Schema.sql` script includes the following:
+The **`Create_Schema.sql`** script includes the following:
 
-### Create Schema
+### <u>Create Schema</u>
 ```sql
 CREATE SCHEMA clothing_store;
 ```
-This initializes the `clothing_store` schema where all tables are defined.
+This initializes the **`clothing_store`** schema where all tables are defined.
 
-### Create Tables
+### <u>Create Tables</u>
 
-#### `customers`
+#### <u>`customers`</u>
 Defines the customers of the clothing store.
 ```sql
 CREATE TABLE clothing_store.customers (
@@ -57,7 +57,7 @@ CREATE TABLE clothing_store.customers (
 );
 ```
 
-#### `products`
+#### <u>`products`</u>
 Defines the store's products.
 ```sql
 CREATE TABLE clothing_store.products (
@@ -70,7 +70,7 @@ CREATE TABLE clothing_store.products (
 );
 ```
 
-#### `orders`
+#### <u>`orders`</u>
 Tracks orders placed by customers.
 ```sql
 CREATE TABLE clothing_store.orders (
@@ -83,7 +83,7 @@ CREATE TABLE clothing_store.orders (
 );
 ```
 
-#### `order_details`
+#### <u>`order_details`</u>
 Details the items within an order.
 ```sql
 CREATE TABLE clothing_store.order_details (
@@ -98,7 +98,7 @@ CREATE TABLE clothing_store.order_details (
 );
 ```
 
-#### `suppliers`
+#### <u>`suppliers`</u>
 Defines suppliers who provide products.
 ```sql
 CREATE TABLE clothing_store.suppliers (
@@ -111,7 +111,7 @@ CREATE TABLE clothing_store.suppliers (
 );
 ```
 
-#### `products_suppliers`
+#### <u>`products_suppliers`</u>
 Defines the many-to-many relationship between products and suppliers.
 ```sql
 CREATE TABLE clothing_store.products_suppliers (
@@ -124,65 +124,65 @@ CREATE TABLE clothing_store.products_suppliers (
     FOREIGN KEY (supplier_id) REFERENCES clothing_store.suppliers(supplier_id)
 );
 ```
-## Schema
+## <u>Schema</u>
 
 ![Clothing Store 3](./images/pic3.png)
 
-## Usage
+## <u>Usage</u>
 
 1. Clone this repository to your local environment.
-2. Run the `Create_Schema.sql` script in your preferred SQL database environment (e.g., PostgreSQL).
+2. Run the **`Create_Schema.sql`** script in your preferred SQL database environment (e.g., PostgreSQL).
 3. Customize or extend the schema as needed for your application.
 
-# Python
+# <u>Python</u>
 
-## Data Generation Script
+## <u>Data Generation Script</u>
 
-- A Python script `generate_customers_data.py` is included to generate sample data for the `customers` table.
+- A Python script **`generate_customers_data.py`** is included to generate sample data for the **`customers`** table.
 
-- A Python script `generate_orders_data.py` is included to generate sample data for the `orders` table.
+- A Python script **`generate_orders_data.py`** is included to generate sample data for the **`orders`** table.
 
-- A Python script `generate_orders_details_data.py` is included to generate sample data for the `details_orders` table.
+- A Python script **`generate_orders_details_data.py`** is included to generate sample data for the **`details_orders`** table.
 
-- A Python script `generate_product_data.py` is included to generate sample data for the `products` table.
+- A Python script **`generate_product_data.py`** is included to generate sample data for the **`products`** table.
 
-- A Python script `generate_product_suppliers_data.py` is included to generate sample data for the `product_suppliers` table.
+- A Python script **`generate_product_suppliers_data.py`** is included to generate sample data for the **`product_suppliers`** table.
 
-- A Python script `generate_suppliers_data.py` is included to generate sample data for the `suppliers` table.
+- A Python script **`generate_suppliers_data.py`** is included to generate sample data for the **`suppliers`** table.
 
-### Script Overview
+### <u>Script Overview</u>
 
-These scripts uses the `Faker` library to generate realistic customer data, ensuring unique values for IDs, names, emails, phone numbers, addresses, and registration dates. The generated data is formatted as SQL `INSERT` statements.
+These scripts uses the **`Faker`** library to generate realistic customer data, ensuring unique values for IDs, names, emails, phone numbers, addresses, and registration dates. The generated data is formatted as SQL **`INSERT`** statements.
 
-## Usage
+## <u>Usage</u>
 
-1. Install the required library: `pip install faker`
+1. Install the required library: **`pip install faker`**
 2. Run the scripts: 
-- `python generate_customers_data.py`
-- `python generate_orders_data.py`
-- `python generate_orders_details_data.py`
-- `python generate_product_data.py`
-- `python generate_product_suppliers_data.py`
-- `python generate_suppliers_data.py`
+- **`python generate_customers_data.py`**
+- **`python generate_orders_data.py`**
+- **`python generate_orders_details_data.py`**
+- **`python generate_product_data.py`**
+- **`python generate_product_suppliers_data.py`**
+- **`python generate_suppliers_data.py`**
 3. Copy the generated SQL output and execute it in your database environment.
 
-## Key Points to Remember
-- **Referential Integrity:** Make sure **customer_id**, **order_id**, **product_id**, and **supplier_id** match valid records in the respective tables to satisfy foreign key constraints.
-- **Default Values:** Columns like **registration_date** and **order_date** have default values, so you can omit them unless you need to override the defaults.
+## <u>Key Points to Remember</u>
+- **<u>Referential Integrity</u>:** Make sure **customer_id**, **order_id**, **product_id**, and **supplier_id** match valid records in the respective tables to satisfy foreign key constraints.
+- **<u>Default Values</u>:** Columns like **registration_date** and **order_date** have default values, so you can omit them unless you need to override the defaults.
 
-## Documentation
+## <u>Documentation</u>
 
 - [Postgres Documentation](https://www.postgresql.org/docs/)
 - [Faker Documentation](https://faker.readthedocs.io/en/master/)
 - [Random Documentation](https://docs.python.org/3/library/random.html)
 
-## Sources
+## <u>Sources</u>
 
 - [DBeaver Community](https://dbeaver.io/download/)
 - [Install Docker Desktop on Linux](https://docs.docker.com/desktop/setup/install/linux/)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [Alacritty](https://github.com/alacritty/alacritty)
 
-## Contributions
+## <u>Contributions</u>
 
 Contributions are welcome! Feel free to submit issues or pull requests to enhance the functionality.
