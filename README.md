@@ -13,6 +13,25 @@ The schema includes the following tables:
 5. **`suppliers`**: Stores supplier details such as name, phone, email, and address.
 6. **`products_suppliers`**: Defines the many-to-many relationship between products and suppliers, including the purchase price and last updated timestamp.
 
+## Connection
+
+1. In this case we are going to use DBeaver, so the first thing that we are gong to do is create a new connection.
+- As is shown in the picture we need:
+    - **Host:** localhost
+    - **Database:** postgres
+    - **Port:** 5432
+    - **Username:** postgres
+    - **Password:** _YOUR PASSWORD_
+<br>
+
+![Clothing Store 1](./images/pic4.png)
+
+2. After we set the parameters we test the connection, so we can apply it later.
+
+<br>
+
+![Clothing Store 1](./images/pic5.jpg)
+
 ## Script Details
 
 The `Create_Schema.sql` script includes the following:
@@ -107,7 +126,7 @@ CREATE TABLE clothing_store.products_suppliers (
 ```
 ## Schema
 
-![Clothing Store 1](./images/pic3.png)
+![Clothing Store 3](./images/pic3.png)
 
 ## Usage
 
@@ -156,6 +175,13 @@ These scripts uses the `Faker` library to generate realistic customer data, ensu
 - [Postgres Documentation](https://www.postgresql.org/docs/)
 - [Faker Documentation](https://faker.readthedocs.io/en/master/)
 - [Random Documentation](https://docs.python.org/3/library/random.html)
+
+## Sources
+
+- [DBeaver Community](https://dbeaver.io/download/)
+- [Install Docker Desktop on Linux](https://docs.docker.com/desktop/setup/install/linux/)
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [Alacritty](https://github.com/alacritty/alacritty)
 
 ## Contributions
 
