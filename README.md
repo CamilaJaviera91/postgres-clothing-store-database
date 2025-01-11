@@ -176,6 +176,7 @@ These scripts uses the **`Faker`** library to generate realistic customer data, 
 - [Faker Documentation](https://faker.readthedocs.io/en/master/)
 - [Random Documentation](https://docs.python.org/3/library/random.html)
 - [Psycopg Documentation](https://www.psycopg.org/docs/)
+- [Pandas Documentation](https://pandas.pydata.org/docs/)
 
 ## <u>Sources</u>
 
