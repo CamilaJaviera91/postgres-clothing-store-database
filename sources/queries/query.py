@@ -60,11 +60,11 @@ def query():
         return df
 
     except psycopg2.Error as e:
-        print(f"Error al ejecutar la consulta: {e}")
+        print(f"Error executing the query: {e}")
         return None
 
     finally:
         # Close cursor and connection safely
         cursor.close()
         con.close()
-        print("Conexión cerrada correctamente.")
+        print("Connection closed successfully.")
