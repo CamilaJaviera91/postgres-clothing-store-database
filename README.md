@@ -15,8 +15,8 @@ The schema includes the following tables:
 
 ## <u>Connection</u>
 
-1. In this case we are going to use DBeaver, so the first thing that we are gong to do is create a new connection.
-- As is shown in the picture we need:
+1. In this case, we are going to use DBeaver, so the first thing we need to do is create a new connection.
+- As shown in the picture, we need to configure the following settings:
     - **<u>Host</u>:** localhost
     - **<u>Database</u>:** postgres
     - **<u>Port</u>:** 5432
@@ -26,7 +26,7 @@ The schema includes the following tables:
 
 ![Clothing Store 1](./images/pic4.png)
 
-2. After we set the parameters we test the connection, so we can apply it later.
+2. After setting the parameters, we should test the connection to ensure it works before applying the configuration.
 
 <br>
 
