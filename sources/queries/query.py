@@ -35,7 +35,7 @@ def query():
                 EXTRACT(YEAR FROM o.order_date) AS year,
                 EXTRACT(MONTH FROM o.order_date) AS month,
                 p.product_id,
-                p.category AS product_category,  -- Corregido
+                p.category AS product_category, 
                 p."name" AS product_name,
                 od.quantity,
                 od.unit_price,
