@@ -9,7 +9,7 @@ import psycopg2
 import locale
 import pandas as pd
 
-def query():
+def query_customers():
     # Set the locale to Spanish (Spain) to ensure proper formatting
     try:
         locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
@@ -41,11 +41,9 @@ def query():
                 od.unit_price,
                 (od.quantity * od.unit_price) AS total
             FROM clothing_store.customers c 
-            LEFT JOIN clothing_store.orders o ON c.customer_id = o.customer_id 
-            LEFT JOIN clothing_store.order_details od ON o.order_id = od.order_id 
-            LEFT JOIN clothing_store.products p ON od.product_id = p.product_id 
-            WHERE o.order_id IS NOT NULL
-              AND p.product_id IS NOT NULL
+            JOIN clothing_store.orders o ON c.customer_id = o.customer_id 
+            JOIN clothing_store.order_details od ON o.order_id = od.order_id 
+            JOIN clothing_store.products p ON od.product_id = p.product_id 
             ORDER BY o.order_date ASC
         ''')
 
