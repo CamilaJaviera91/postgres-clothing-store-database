@@ -28,21 +28,19 @@ def query_monthly_sales():
         # Execute the SQL query to retrieve the sales data
         cursor.execute('''
             SELECT DISTINCT
-                EXTRACT(YEAR FROM o.order_date) AS year,
-                EXTRACT(MONTH FROM o.order_date) AS month,
+                MAKE_DATE(EXTRACT(YEAR FROM o.order_date)::INT, EXTRACT(MONTH FROM o.order_date)::INT, 1) AS period,
                 SUM(od.quantity) AS total_quantity,
                 SUM(od.unit_price) AS total_unit_price,
                 SUM(od.quantity * od.unit_price) AS final_total
-                FROM clothing_store.customers c 
+            FROM clothing_store.customers c 
                 JOIN clothing_store.orders o ON c.customer_id = o.customer_id 
                 JOIN clothing_store.order_details od ON o.order_id = od.order_id 
                 JOIN clothing_store.products p ON od.product_id = p.product_id 
             GROUP BY 
-                EXTRACT(YEAR FROM o.order_date),
-                EXTRACT(MONTH FROM o.order_date)
+                period
             ORDER BY 
-                EXTRACT(YEAR FROM o.order_date),
-                EXTRACT(MONTH FROM o.order_date);
+                period;
+
         ''')
 
         records = cursor.fetchall()  # Fetch all the results
