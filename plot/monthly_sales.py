@@ -13,3 +13,17 @@ df = qms()
 # Select the fields that we are going to use
 period = df['period']
 final_total = df['final_total']
+
+# Plot the graph
+
+plt.bar(period, final_total, color="Lightgreen")
+
+plt.title('Period vs Total Sales')
+plt.xlabel('Period')
+plt.ylabel('Total')
+
+# Etiquetas sobre cada barra
+for i, value in enumerate(final_total):
+    plt.text(i, value + 5, str(value), ha='center')
+
+plt.show()
