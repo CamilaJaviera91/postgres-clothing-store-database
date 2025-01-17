@@ -28,7 +28,7 @@ def query_customers():
         # Execute the SQL query to retrieve the sales data
         cursor.execute('''
             SELECT 
-                c.customer_id, 
+                c.customer_id as customers, 
                 c."name" AS customer_name,
                 o.order_id,
                 o.order_date,
