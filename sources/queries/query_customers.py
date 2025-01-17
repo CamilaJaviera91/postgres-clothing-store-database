@@ -28,12 +28,11 @@ def query_customers():
         # Execute the SQL query to retrieve the sales data
         cursor.execute('''
             SELECT 
-                c.customer_id, 
+                c.customer_id as customers, 
                 c."name" AS customer_name,
                 o.order_id,
                 o.order_date,
-                EXTRACT(YEAR FROM o.order_date) AS year,
-                EXTRACT(MONTH FROM o.order_date) AS month,
+                MAKE_DATE(EXTRACT(YEAR FROM o.order_date)::INT, EXTRACT(MONTH FROM o.order_date)::INT, 1) AS period,
                 p.product_id,
                 p.category AS product_category, 
                 p."name" AS product_name,
@@ -43,7 +42,9 @@ def query_customers():
             FROM clothing_store.customers c 
             JOIN clothing_store.orders o ON c.customer_id = o.customer_id 
             JOIN clothing_store.order_details od ON o.order_id = od.order_id 
-            JOIN clothing_store.products p ON od.product_id = p.product_id 
+            JOIN clothing_store.products p ON od.product_id = p.product_id
+            WHERE 
+                MAKE_DATE(EXTRACT(YEAR FROM o.order_date)::INT, EXTRACT(MONTH FROM o.order_date)::INT, 1) BETWEEN '2024-01-01' AND '2024-12-31'
             ORDER BY o.order_date ASC
         ''')
 
