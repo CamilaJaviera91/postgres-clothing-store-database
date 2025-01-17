@@ -28,9 +28,7 @@ def query_monthly_product_sales():
         # Execute the SQL query to retrieve the sales data
         cursor.execute('''
             SELECT distinct
-                p.name,
-                EXTRACT(YEAR FROM o.order_date) AS year,
-                EXTRACT(MONTH FROM o.order_date) AS month,
+                p.name AS product,
                 SUM(od.quantity) AS total_quantity,
                 SUM(od.unit_price) AS total_unit_price,
                 SUM(od.quantity * od.unit_price) AS final_total
@@ -38,13 +36,13 @@ def query_monthly_product_sales():
             JOIN clothing_store.orders o ON c.customer_id = o.customer_id 
             JOIN clothing_store.order_details od ON o.order_id = od.order_id 
             JOIN clothing_store.products p ON od.product_id = p.product_id 
+            WHERE 
+                MAKE_DATE(EXTRACT(YEAR FROM o.order_date)::INT, EXTRACT(MONTH FROM o.order_date)::INT, 1) BETWEEN '2024-01-01' AND '2024-12-31'
             GROUP BY 
-                EXTRACT(YEAR FROM o.order_date),
-                EXTRACT(MONTH FROM o.order_date),
                 p.name
             ORDER BY 
-                EXTRACT(YEAR FROM o.order_date),
-                EXTRACT(MONTH FROM o.order_date);
+                SUM(od.quantity * od.unit_price) DESC
+            LIMIT 10;
         ''')
 
         records = cursor.fetchall()  # Fetch all the results
