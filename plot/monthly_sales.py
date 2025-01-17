@@ -22,12 +22,12 @@ final_total = df['final_total']
 
 # Plot the graph
 plt.figure(figsize=(10, 6))  # Sets the figure size
-plt.bar(period, final_total, color="lightgreen")  # Creates a bar plot
+plt.bar(period, final_total, color="darkred", width=20)  # Creates a bar plot
 
 plt.title('Period vs Total Sales')  # Sets the plot title
 plt.xlabel('Period')  # Labels the x-axis
 plt.ylabel('Total Sales')  # Labels the y-axis
-plt.xticks(rotation=45)  # Rotates x-axis labels for better readability
+plt.xticks(period[::len(period)//12], rotation=45)  # Muestra 12 etiquetas espaciadas uniformemente
 
 # Labels on top of each bar
 # Displays the exact sales value above each bar
