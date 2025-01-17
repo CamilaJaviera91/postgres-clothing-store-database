@@ -29,7 +29,6 @@ def query_monthly_product_sales():
         cursor.execute('''
             SELECT distinct
                 p.name AS product,
-                MAKE_DATE(EXTRACT(YEAR FROM o.order_date)::INT, EXTRACT(MONTH FROM o.order_date)::INT, 1) AS period,
                 SUM(od.quantity) AS total_quantity,
                 SUM(od.unit_price) AS total_unit_price,
                 SUM(od.quantity * od.unit_price) AS final_total
@@ -40,10 +39,10 @@ def query_monthly_product_sales():
             WHERE 
                 MAKE_DATE(EXTRACT(YEAR FROM o.order_date)::INT, EXTRACT(MONTH FROM o.order_date)::INT, 1) BETWEEN '2024-01-01' AND '2024-12-31'
             GROUP BY 
-                MAKE_DATE(EXTRACT(YEAR FROM o.order_date)::INT, EXTRACT(MONTH FROM o.order_date)::INT, 1),
                 p.name
             ORDER BY 
-                MAKE_DATE(EXTRACT(YEAR FROM o.order_date)::INT, EXTRACT(MONTH FROM o.order_date)::INT, 1)
+                SUM(od.quantity * od.unit_price) DESC
+            LIMIT 10;
         ''')
 
         records = cursor.fetchall()  # Fetch all the results
