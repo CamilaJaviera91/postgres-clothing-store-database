@@ -29,7 +29,8 @@ def query_suppliers_q():
         cursor.execute('''
             SELECT
                 MAKE_DATE(EXTRACT(YEAR FROM c.registration_date)::INT, EXTRACT(MONTH FROM c.registration_date)::INT, 1) AS period,
-                c.name AS name
+                c.name AS name,
+                c.customer_id as customers
             FROM clothing_store.customers c 
             WHERE 
                 MAKE_DATE(EXTRACT(YEAR FROM c.registration_date)::INT, EXTRACT(MONTH FROM c.registration_date)::INT, 1) BETWEEN '2024-01-01' AND '2024-12-01'
