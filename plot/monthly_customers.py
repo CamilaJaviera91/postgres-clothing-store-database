@@ -30,7 +30,7 @@ plt.xlabel('Period')
 plt.ylabel('Total Customers')  # Corrected label
 
 # Adjust x-ticks to show 12 values or less
-plt.xticks(period[::len(period)//12], rotation=45)  # Muestra 12 etiquetas espaciadas uniformemente
+plt.xticks(period[::len(period)%12], rotation=90)  # Muestra 12 etiquetas espaciadas uniformemente
 
 # Labels on top of each bar
 for x, y in zip(period, customers):
