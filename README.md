@@ -172,7 +172,7 @@ These scripts uses the **`Faker`** library to generate realistic customer data, 
 
 ## <u>Plot</u>
 
-
+![Clothing Store 2](./images/pic5.png)
 
 ## <u>Documentation</u>
 
