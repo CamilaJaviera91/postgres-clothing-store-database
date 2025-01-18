@@ -170,6 +170,10 @@ These scripts uses the **`Faker`** library to generate realistic customer data, 
 - **<u>Referential Integrity</u>:** Make sure **customer_id**, **order_id**, **product_id**, and **supplier_id** match valid records in the respective tables to satisfy foreign key constraints.
 - **<u>Default Values</u>:** Columns like **registration_date** and **order_date** have default values, so you can omit them unless you need to override the defaults.
 
+## <u>Plot</u>
+
+
+
 ## <u>Documentation</u>
 
 - [Postgres Documentation](https://www.postgresql.org/docs/)
@@ -177,6 +181,7 @@ These scripts uses the **`Faker`** library to generate realistic customer data, 
 - [Random Documentation](https://docs.python.org/3/library/random.html)
 - [Psycopg Documentation](https://www.psycopg.org/docs/)
 - [Pandas Documentation](https://pandas.pydata.org/docs/)
+- [Matplotlib Documentation](https://matplotlib.org/stable/index.html)
 
 ## <u>Sources</u>
 
