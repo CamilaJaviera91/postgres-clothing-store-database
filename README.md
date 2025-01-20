@@ -176,6 +176,8 @@ These scripts uses the **`Faker`** library to generate realistic customer data, 
 
 ![Clothing Store 3](./images/pic7.png)
 
+![Clothing Store 4](./images/pic8.png)
+
 ## <u>Documentation</u>
 
 - [Postgres Documentation](https://www.postgresql.org/docs/)
