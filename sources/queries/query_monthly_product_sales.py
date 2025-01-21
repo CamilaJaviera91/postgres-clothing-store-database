@@ -14,12 +14,12 @@ def query_monthly_product_sales():
     try:
         locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
     except locale.Error:
-        print("Error: No se pudo establecer la configuración regional.")
+        print("Error: Could not establish the regional settings.")
     
     # Establish a connection using the connection function from 'connection.py'
     con = connection()
     if con is None:
-        print("Error: No se pudo establecer la conexión con la base de datos.")
+        print("Error: Could not establish a connection to the database.")
         return
 
     try:
